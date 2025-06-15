@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #fdfdfd;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e65100;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hero {
+    background: #ccc;    text-align: center;
+    align-content: center;
+    height: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .search-box {
+    margin: 1rem 0;
+  }
+  
+  .search-box input {
+    padding: 0.5rem;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+  }
+  
+  .search-box button {
+    padding: 0.5rem;
+    border: none;
+    background: #e65100;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+
+  .section-title + p {
+    padding: 0 10px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  
+  main {
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+    text-align: left;
+  }
+  
+  .categories-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .categories-section h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #e65100;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 1rem;
+  }
+  
+  .category-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .category-card:hover {
+    transform: scale(1.04);
+  }
+  
+  .category-card img {
+    width: 100%;
+    height: 150px;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .category-card p {
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .category-card .category-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(230, 81, 0, 0.9);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    z-index: 10;
+  }
+  
+  .meals-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .meal-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .meal-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .meal-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .meal-card p {
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .meal-details {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 2px solid #e65100;
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.1);
+  }
+  
+  .meal-details img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: 1rem auto;
+  }
+  
+  .back-btn {
+    background: #e65100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+  
+  .back-btn:hover {
+    background: #d84315;
+  }
+  
+  .menu {
+    position: absolute;
+    right: 1rem;
+    top: 4rem;
+    background: white;
+    box-shadow: 0 0 10px #00000033;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: none;
+    width: 280px;
+    z-index: 1001;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .menu a:hover {
+    background: #f5f5f5;
+    color: #e65100;
+  }
+  
+  .menu-close {
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #e65100;
+    cursor: pointer;
+  }
+  
+  .tags,
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .tag {
+    background-color: #f7f7f7;
+    border-left: 4px solid #e65100;
+    padding: 6px 10px;
+    border-radius: 5px;
+  }
+  
+  .instructions {
+    margin-top: 20px;
+  }
+  
+  .instructions p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .instructions p::before {
+    content: "✔ ";
+    color: #e65100;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    padding-left: 10px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #e65100;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .search-box input {
+      width: 80%;
+    }
+  
+    .categories {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .meals-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

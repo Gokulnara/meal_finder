@@ -68,7 +68,7 @@
     border: none;
     background: #e65100;
     color: white;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     height: 40px;
     width: 40px;
@@ -169,7 +169,7 @@
     overflow: hidden;
     cursor: pointer;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.1s;
   }
   
   .meal-card:hover {

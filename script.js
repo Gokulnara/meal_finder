@@ -57,16 +57,14 @@ const categoryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
     }
     async function loadMealsByCategory(category) {
         try {
-          // Fetch meals in the selected category
           const mealRes = await fetch(`${filterURL}${category}`);
           const mealData = await mealRes.json();
       
-          // Fetch all categories again to get the selected category description
           const catRes = await fetch(categoryURL);
           const catData = await catRes.json();
           const selectedCategory = catData.categories.find(c => c.strCategory === category);
       
-          // Show category description before meals
+          
           const categoryDescription = `
             <div style="grid-column: 1/-1;">
               <h3 class="section-title">${selectedCategory.strCategory}</h3>
@@ -126,7 +124,7 @@ const categoryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
           }
         }
 
-        // Hide meals section and show meal details at top
+        
         mealsSection.innerHTML = "";
         mealDetails.style.display = "block";
         mealDetails.innerHTML = `
@@ -150,7 +148,6 @@ const categoryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
           </div>
         `;
 
-        // Scroll to top of meal details
         mealDetails.scrollIntoView({ 
           behavior: 'smooth', 
           block: 'start' 
@@ -162,17 +159,16 @@ const categoryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
 
     function goBack() {
       mealDetails.style.display = "none";
-      // You can add logic here to restore the previous meal list if needed
-      loadCategories(); // For now, just reload categories
+      loadCategories(); 
       
-      // Scroll back to categories
+    
       document.querySelector('.categories-section').scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
       });
     }
 
-    // Load categories on page load
+    
     loadCategories();
 
     async function updateHeroBackgroundWithCategory() {
